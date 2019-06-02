@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: 'Kumar One Outline', cursive;
+}
+
+section {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "a a a"
+  "b b b"
+  "c c c"
+  "d d d"
+  "e e e"
+  "f f f";
+  font-family: 'Kumar One Outline', cursive;
+
+}
+
+nav {
+  padding: 8px;
+  grid-area: a;
+  background-color: white;
+
+}
+
+.logo {
+  float: left;
+  padding: 8px;
+  margin-left: 16px;
+  margin-top: 8px;
+
+}
+
+.logo a {
+  color: #296eb0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 38px;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-family: 'Kumar One Outline', cursive;
+
+}
+
+.verberg {
+  display: none;
+}
+
+nav ul {
+  float: right;
+}
+
+nav ul li {
+  display: inline-block;
+  float: left;
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 48px;
+}
+
+nav ul li:last-child {
+  margin-left: 48px;
+}
+
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  color: #296eb0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  font-weight: 600px;
+  font-family: 'Kumar One Outline', cursive;
+}
+
+@media screen and (max-width: 864px){
+
+  nav ul li:not(:first-child) {
+    margin-left: 0px;
+  }
+
+  nav ul li:last-child {
+    margin-left: 0px;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .links {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: white;
+    opacity: 0;
+    transition: all 0.2 ease;
+  }
+
+  .links ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .links ul li:nth-child(1) a {
+    transition-delay: O.2s;
+  }
+
+  .links ul li:nth-child(2) a {
+    transition-delay: O.3s;
+  }
+
+  .links ul li:nth-child(3) a {
+    transition-delay: O.4s;
+  }
+
+  .links ul li:nth-child(4) a {
+    transition-delay: O.5s;
+  }
+
+  .links ul li:not(:first-child) a {
+    margin-left: 0;
+  }
+
+  .links ul li a {
+    padding: 10px 24px;
+    opacity: 0;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transform: translateX(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-knop {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+
+  .nav-knop i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #296eb0;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+
+  .nav-knop i:nth-child(1) {
+    margin-top: 16px;
+  }
+
+  .nav-knop i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+
+  .nav-knop i:nth-child(3) {
+    margin-top: 4px;
+  }
+
+  #nav:checked + .nav-knop {
+    transform: rotate(45deg);
+  }
+
+  #nav:checked + .nav-knop i{
+    background: #296eb0;
+    transition: transform 0.2s ease;
+  }
+
+  #nav:checked + .nav-knop i:nth-child(1){
+    transform: translateY(6px) rotate(180deg);
+  }
+
+  #nav:checked + .nav-knop i:nth-child(2){
+    opacity: 0;
+  }
+
+  #nav:checked + .nav-knop i:nth-child(3){
+    transform: translateY(-6px) rotate(90deg);
+  }
+
+  #nav:checked ~ .links{
+    z-index: 9990;
+    opacity: 1;
+  }
+
+  #nav:checked ~ .links ul li a{
+    opacity: 1;
+    transform: translateX(0);
+    color: #296eb0;
+  }
+
+  .verberg {
+    display: none;
+  }
+
+}
+
+main{
+  grid-area: b;
+  display: grid;
+  grid-template-areas:
+  "g h i"
+  "j k l";
+  margin-left: 50px;
+}
+
+main div{
+  width: 400px;
+}
+
+main div:nth-child(1){
+  grid-area: g;
+  background-color: ;
+  height: 300px;
+  font-family: sans-serif, helvetica;
+  background-image: url(afb/city_of_god_1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .4;
+}
+
+main div:nth-child(1):hover{
+  opacity: 1;
+}
+
+.een{
+  transition: transform .2s;
+  text-align: center;
+}
+.een:hover{
+  -ms-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform: scale(1.2);
+}
+.een p{
+  margin-top: 85px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+main div:nth-child(2){
+  grid-area: h;
+  background-color: ;
+  height: 300px;
+  font-family: sans-serif, helvetica;
+  background-image: url(afb/la_haine.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .4;
+  margin-top: 30px;
+}
+
+main div:nth-child(2):hover{
+  opacity: 4;
+}
+
+.twee{
+  transition: transform .2s;
+  text-align: center;
+}
+.twee:hover{
+  -ms-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform: scale(1.2);
+}
+
+.twee p{
+  margin-top: 85px;
+  font-size: 30px;
+  font-weight: bold;
+  color: darkgray;
+}
+
+main div:nth-child(3){
+  grid-area: i;
+  background-color: ;
+  height: 300px;
+  font-family: sans-serif, helvetica;
+  background-image: url(afb/enter5.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .4;
+  margin-top: 50px;
+
+}
+
+main div:nth-child(3):hover{
+  opacity: 4;
+}
+
+.drie{
+  transition: transform .2s;
+  text-align: center;
+}
+.drie:hover{
+  -ms-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform: scale(1.2);
+}
+
+.drie p{
+  margin-top: 85px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+main div:nth-child(4){
+  grid-area: j;
+  background-color: ;
+  height: 300px;
+  font-family: sans-serif, helvetica;
+  background-image: url(afb/apoc.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .4;
+}
+
+main div:nth-child(4):hover{
+  opacity: 4;
+}
+
+.vier{
+  transition: transform .2s;
+  text-align: center;
+}
+.vier:hover{
+  -ms-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform: scale(1.2);
+}
+
+.vier p{
+  margin-top: 85px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+main div:nth-child(5){
+  grid-area: k;
+  background-color: ;
+  height: 300px;
+  font-family: sans-serif, helvetica;
+  background-image: url(afb/TheGF.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .4;
+  margin-top: 10px;
+
+}
+
+main div:nth-child(5):hover{
+  opacity: 4;
+}
+
+.vijf{
+  transition: transform .2s;
+  text-align: center;
+}
+.vijf:hover{
+  -ms-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform: scale(1.2);
+}
+
+.vijf p{
+  margin-top: 85px;
+  font-size: 30px;
+  font-weight: bold;
+  color: gray;
+}
+
+main div:nth-child(6){
+  grid-area: l;
+  background-color: ;
+  height: 300px;
+  font-family: sans-serif, helvetica;
+  background-image: url(afb/ProjectA.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .4;
+  margin-top: 10px;
+
+}
+
+main div:nth-child(6):hover{
+  opacity: 4;
+}
+
+.zes{
+  transition: transform .2s;
+  text-align: center;
+}
+.zes:hover{
+  -ms-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform: scale(1.2);
+}
+
+.zes p{
+  margin-top: 85px;
+  font-size: 30px;
+  font-weight: bold;
+  color: Black;
+}
